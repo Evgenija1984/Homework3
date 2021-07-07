@@ -24,9 +24,12 @@ public class NoteDescriptionFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LinearLayout linearLayout = (LinearLayout) view;
+        createTextViewList((LinearLayout) view);
+    }
+
+    private void createTextViewList(LinearLayout linearLayout) {
         String[] noteName = getResources().getStringArray(R.array.note_name);
-        for(int i = 0; i < noteName.length; i++){
+        for (int i = 0; i < noteName.length; i++) {
             TextView textView = new TextView(getContext());
             textView.setText(noteName[i]);
             textView.setTextSize(25);
