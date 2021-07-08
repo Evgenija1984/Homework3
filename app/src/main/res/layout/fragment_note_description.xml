@@ -4,13 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".NoteDescriptionFragment">
+
+    <ImageView
+        android:id="@+id/coat_of_arms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textViewBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/body_text"
-        android:textSize="@dimen/text_size"/>
+        android:textSize="@dimen/text_size" />
 
 </LinearLayout>
