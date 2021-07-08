@@ -23,8 +23,7 @@ public class NoteListFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
         if (isLandscape) {
-            NoteDescriptionFragment noteDescriptionFragment = NoteDescriptionFragment.newInstance(0);
-            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.notes_description_land_container, noteDescriptionFragment).commit();
+            showLandNoteDescription(0);
         }
     }
 
@@ -50,12 +49,21 @@ public class NoteListFragment extends Fragment {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showPortNoteDescription(finalI);
+                    if (isLandscape) {
+                        showLandNoteDescription(finalI);
+                    } else {
+                        showPortNoteDescription(finalI);
+                    }
                 }
             });
             textView.setTextSize(25);
             linearLayout.addView(textView);
         }
+    }
+
+    private void showLandNoteDescription(int index) {
+        NoteDescriptionFragment noteDescriptionFragment = NoteDescriptionFragment.newInstance(index);
+        requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.notes_description_land_container, noteDescriptionFragment).commit();
     }
 
     private void showPortNoteDescription(int finalI) {
