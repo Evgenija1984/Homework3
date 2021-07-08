@@ -5,11 +5,6 @@
         <item>Заметка 2</item>
         <item>Заметка 3</item>
     </string-array>
-    <integer-array name="numbers">
-        <item>@drawable/note1</item>
-        <item>@drawable/note2</item>
-        <item>@drawable/note3</item>
-    </integer-array>
     <string-array name="note_body">
         <item>Текст заметки 1</item>
         <item>Текст заметки 2</item>

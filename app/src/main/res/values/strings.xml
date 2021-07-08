@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Homework3</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="body_text">Текст заметки</string>
+    <string name="note_text">Имя заметки</string>
 </resources>
