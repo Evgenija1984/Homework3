@@ -36,14 +36,18 @@ public class NoteListFragment extends Fragment {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), NoteDescriptionPortActivity.class);
-                    intent.putExtra(NoteDescriptionFragment.KEY_INDEX, finalI);
-                    startActivity(intent);
+                    showPortNoteDescription(finalI);
                 }
             });
             textView.setTextSize(25);
             linearLayout.addView(textView);
         }
+    }
+
+    private void showPortNoteDescription(int finalI) {
+        Intent intent = new Intent(getActivity(), NoteDescriptionPortActivity.class);
+        intent.putExtra(NoteDescriptionFragment.KEY_INDEX, finalI);
+        startActivity(intent);
     }
 
     @Override
