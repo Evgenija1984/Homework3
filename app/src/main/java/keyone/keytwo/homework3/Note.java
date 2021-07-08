@@ -6,10 +6,6 @@ import android.os.Parcelable;
 
 public class Note implements Parcelable {
     private int noteIndex;
-    private static final String KEY_NOTE_YEAR = "key_note_year_";
-    private static final String KEY_NOTE_MONTH = "key_note_monthOfYear_";
-    private static final String KEY_NOTE_DAY = "";
-    private static final String KEY_PREF = "note_date";
 
     public Note(int contentIndex){
         this.noteIndex = contentIndex;

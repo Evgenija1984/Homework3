@@ -9,18 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 // это типа гербы
 public class NoteDescriptionFragment extends Fragment {
 
-    public static final String KEY_INDEX = "index";
-    private int index;
+    public static final String ARG_NOTE = "note";
+    private Note note;
 
-    public static NoteDescriptionFragment newInstance(int index) {
+    public static NoteDescriptionFragment newInstance(Note note) {
         NoteDescriptionFragment fragment = new NoteDescriptionFragment();
         Bundle args = new Bundle();
-        //args.putString(KEY_INDEX, index);
-        args.putInt(KEY_INDEX, index);
+        args.putParcelable(ARG_NOTE, note);
         fragment.setArguments(args);
         return fragment;
     }
@@ -29,7 +29,7 @@ public class NoteDescriptionFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            index = getArguments().getInt(KEY_INDEX);
+            note = getArguments().getParcelable(ARG_NOTE);
         }
     }
 
@@ -37,9 +37,10 @@ public class NoteDescriptionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_description, container, false);
-        ImageView imageView = view.findViewById(R.id.coat_of_arms);
-        TypedArray images = getResources().obtainTypedArray(R.array.numbers);
-        imageView.setImageResource(images.getResourceId(index, -1));
+        TextView textViewName = view.findViewById(R.id.textViewName);
+        TextView textViewBody = view.findViewById(R.id.textViewBody);
+        textViewName.setText(note.getNoteName(getContext()));
+        textViewBody.setText(note.getNoteBody(getContext()));
         return view;
     }
 }
