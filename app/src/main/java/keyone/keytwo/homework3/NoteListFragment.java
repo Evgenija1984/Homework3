@@ -14,6 +14,8 @@ import android.widget.TextView;
 // это типа названия городов
 public class NoteListFragment extends Fragment {
 
+    private boolean isLandscape;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
