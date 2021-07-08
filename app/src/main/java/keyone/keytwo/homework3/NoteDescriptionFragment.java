@@ -16,10 +16,6 @@ public class NoteDescriptionFragment extends Fragment {
     public static final String KEY_INDEX = "index";
     private int index;
 
-    public NoteDescriptionFragment() {
-        // Required empty public constructor
-    }
-
     public static NoteDescriptionFragment newInstance(int index) {
         NoteDescriptionFragment fragment = new NoteDescriptionFragment();
         Bundle args = new Bundle();
