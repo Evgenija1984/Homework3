@@ -1,5 +1,6 @@
 package keyone.keytwo.homework3;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 // это типа названия городов
 public class NoteListFragment extends Fragment {
 
@@ -30,6 +32,15 @@ public class NoteListFragment extends Fragment {
         for (int i = 0; i < noteName.length; i++) {
             TextView textView = new TextView(getContext());
             textView.setText(noteName[i]);
+            final int finalI = i;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), NoteDescriptionPortActivity.class);
+                    intent.putExtra(NoteDescriptionFragment.KEY_INDEX, finalI);
+                    startActivity(intent);
+                }
+            });
             textView.setTextSize(25);
             linearLayout.addView(textView);
         }
