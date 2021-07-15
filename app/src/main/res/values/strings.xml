@@ -2,4 +2,6 @@
     <string name="app_name">Homework3</string>
     <string name="body_text">Текст заметки</string>
     <string name="note_text">Имя заметки</string>
+    <string name="note_list_button_txt">Список</string>
+    <string name="note_body_button_txt">Текст заметки</string>
 </resources>
